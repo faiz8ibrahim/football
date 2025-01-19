@@ -1,0 +1,95 @@
+/* General styles */
+body {
+    margin: 0;
+    background: #87ceeb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Ocean background */
+  .ocean {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Fish container */
+  .fish {
+    position: relative;
+    width: 150px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    animation: swim 5s linear infinite;
+  }
+  
+  /* Fish body */
+  .body {
+    width: 100px;
+    height: 60px;
+    background: #ff6347;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Fish eye */
+  .eye {
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    z-index: 3;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .eye::after {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+  }
+  
+  /* Fish tail */
+  .tail {
+    width: 50px;
+    height: 40px;
+    background: #ff6347;
+    position: absolute;
+    right: -20px;
+    top: 10px;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    z-index: 1;
+    animation: flap 0.5s ease-in-out infinite;
+  }
+  
+  /* Animations */
+  @keyframes swim {
+    0% {
+      transform: translateX(-200px);
+    }
+    100% {
+      transform: translateX(100vw);
+    }
+  }
+  
+  @keyframes flap {
+    0%, 100% {
+      transform: rotate(10deg);
+    }
+    50% {
+      transform: rotate(-10deg);
+    }
+  }
